@@ -109,7 +109,7 @@ export default {
 
       this.$api
         .createRole({
-          name: this.newName
+          name: this.newName.replace(/\b\w/g, l => l.toUpperCase())
         })
         .then(res => res.data)
         .then(role => {
